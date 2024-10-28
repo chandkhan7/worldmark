@@ -3,19 +3,23 @@ const app=express();
 const db =require("./db");
 const Person = require("./models/person");
 const bodyParser=require("body-parser");
-const personRotes=require('./routes/personRoutes');
-const { config } = require("dotenv");
+const personRoutes = require('./routes/personRoutes');
+const menuItemRoutes = require('./routes/menuItemRoutes');
 require('dotenv').config();
 
 
 app.use(bodyParser.json());
+const PORT =process.env.PORT || 3002;
 
 
-const PORT =process.env.PORT ||3002;
+app.get('/about',(req,res)=>{
+  res.send('Welcom sir');
+})
 
 
-app.use('/',personRotes);
 
+app.use('/', personRoutes);
+app.use('/menu', menuItemRoutes);
 
 // app.get("/about",(req,res)=>{
 //   res.send('You are on About')

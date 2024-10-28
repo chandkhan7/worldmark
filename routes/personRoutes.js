@@ -3,7 +3,7 @@ const router=express.Router();
 const Person=require('../models/person');
 
 
-router.post("/hiring",async(req,res)=>{
+router.post("/",async(req,res)=>{
   try{const data=req.body; //Assuming the request body contains the person data 
   
     //Create a new person document using the mongoose model
