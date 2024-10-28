@@ -1,16 +1,17 @@
 const express =require("express");
 const app=express();
-const PORT=3001;
 const db =require("./db");
 const Person = require("./models/person");
 const bodyParser=require("body-parser");
-const personRotes=require('./routes/personRoutes')
+const personRotes=require('./routes/personRoutes');
+const { config } = require("dotenv");
+require('dotenv').config();
 
 
 app.use(bodyParser.json());
 
 
-
+const PORT =process.env.PORT ||3001;
 
 
 app.use('/',personRotes);
