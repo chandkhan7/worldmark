@@ -17,7 +17,6 @@ const PORT =process.env.PORT ||3001;
 app.use('/',personRotes);
 
 
-
 // app.get("/about",(req,res)=>{
 //   res.send('You are on About')
 // });

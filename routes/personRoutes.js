@@ -2,7 +2,8 @@ const express =require('express');
 const router=express.Router();
 const Person=require('../models/person');
 
-router.post("/",async(req,res)=>{
+
+router.post("/hiring",async(req,res)=>{
   try{const data=req.body; //Assuming the request body contains the person data 
   
     //Create a new person document using the mongoose model
@@ -25,6 +26,7 @@ router.get("/",async(req,res)=>{
    const data= await Person.find();
    console.log('data fetched');
    res.status(200).json(data);
+    
   }
   catch(err){
    console.log(err);
@@ -99,6 +101,9 @@ router.delete('/:id',async(req,res)=>{
 
 
 
+router.get('./homy/my', (req,res)=>{
+  res.send("Everything is OKay")
+})
 
 
 
