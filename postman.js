@@ -11,7 +11,7 @@ require('dotenv').config();
 app.use(bodyParser.json());
 
 
-const PORT =process.env.PORT ||3001;
+const PORT =process.env.PORT ||3002;
 
 
 app.use('/',personRotes);
